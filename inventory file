@@ -1,1 +1,4 @@
+[workers]
+worker1 ansible_host=13.203.71.131
+
 
