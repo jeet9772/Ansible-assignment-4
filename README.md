@@ -145,6 +145,12 @@ The role can be extended to manage:
 * SSH configuration
 * File permissions
 
+####screenshot 
+
+
+<img width="1440" height="900" alt="Screenshot 2026-08-30 at 10 07 18 PM" src="https://github.com/user-attachments/assets/3b2d4ace-2b36-48f0-9b7d-0bcacbed65c9" />
+
+
 ## Conclusion
 
 The `system_manager` role automates common Linux system administration tasks such as software installation, user management, Git repository management, and directory creation.
