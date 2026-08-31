@@ -1,0 +1,23 @@
+---
+system_manager_packages:
+  - git
+  - curl
+  - vim
+  - wget
+
+system_manager_users:
+  - name: devuser
+    shell: /bin/bash
+  - name: testuser
+    shell: /bin/bash
+
+system_manager_git_repositories:
+  - repo: "https://github.com/opstree/spring3hibernate.git"
+    dest: "/opt/spring3hibernate"
+
+system_manager_directories:
+  - /opt/app
+  - /opt/app/logs
+  - /opt/app/config
+  - /opt/app/data
+system_manager_hostname: "worker1"      

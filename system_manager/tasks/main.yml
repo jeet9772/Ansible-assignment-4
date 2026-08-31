@@ -1,0 +1,31 @@
+---
+- name: Install required software packages
+  ansible.builtin.package:
+    name: "{{ system_manager_packages }}"
+    state: present
+
+- name: Create system users
+  ansible.builtin.user:
+    name: "{{ item.name }}"
+    shell: "{{ item.shell }}"
+    state: present
+  loop: "{{ system_manager_users }}"
+
+- name: Manage Git repositories
+  ansible.builtin.git:
+    repo: "{{ item.repo }}"
+    dest: "{{ item.dest }}"
+    version: master
+    update: true
+  loop: "{{ system_manager_git_repositories }}"
+
+- name: Create required directories
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    mode: "0755"
+  loop: "{{ system_manager_directories }}"
+
+- name: Set system hostname
+  ansible.builtin.hostname:
+    name: "{{ system_manager_hostname }}"    
